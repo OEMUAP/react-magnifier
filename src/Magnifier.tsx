@@ -1,7 +1,6 @@
 import "./style.scss";
 
-import debounce from "lodash.debounce";
-import throttle from "lodash.throttle";
+import {debounce, throttle} from "lodash";
 import React, { PureComponent } from "react";
 
 type mgShape = "circle" | "square";

@@ -1,10 +1,5 @@
-'use strict';
-
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
-
-var lodash = require('lodash');
-var React = require('react');
-var React__default = _interopDefault(React);
+import { throttle, debounce } from 'lodash';
+import React, { PureComponent } from 'react';
 
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation. All rights reserved.
@@ -189,17 +184,17 @@ var Magnifier = (function (_super) {
             if (mgShape === "circle") {
                 mgClasses += " circle";
             }
-            return (React__default.createElement("div", { className: "magnifier " + className, style: {
+            return (React.createElement("div", { className: "magnifier " + className, style: {
                     width: width,
                     height: height,
                     overflow: mgShowOverflow ? "visible" : "hidden",
                 } },
-                React__default.createElement("img", __assign({ className: "magnifier-image", src: src, width: "100%", height: "100%" }, otherProps, { onLoad: function () {
+                React.createElement("img", __assign({ className: "magnifier-image", src: src, width: "100%", height: "100%" }, otherProps, { onLoad: function () {
                         _this.calcImgBounds();
                     }, ref: function (img) {
                         _this.img = img;
                     } })),
-                _this.imgBounds && (React__default.createElement("div", { className: mgClasses, style: {
+                _this.imgBounds && (React.createElement("div", { className: mgClasses, style: {
                         width: mgWidth,
                         height: mgHeight,
                         left: "calc(" + relX * 100 + "% - " + mgWidth / 2 + "px + " + mgOffsetX + "px - " + mgBorderWidth + "px)",
@@ -212,13 +207,13 @@ var Magnifier = (function (_super) {
                         borderWidth: mgBorderWidth,
                     } }))));
         };
-        _this.onMouseMove = lodash.throttle(_this.onMouseMove.bind(_this), 20, {
+        _this.onMouseMove = throttle(_this.onMouseMove.bind(_this), 20, {
             trailing: false,
         });
-        _this.onTouchMove = lodash.throttle(_this.onTouchMove.bind(_this), 20, {
+        _this.onTouchMove = throttle(_this.onTouchMove.bind(_this), 20, {
             trailing: false,
         });
-        _this.calcImgBoundsDebounced = lodash.debounce(_this.calcImgBounds, 200);
+        _this.calcImgBoundsDebounced = debounce(_this.calcImgBounds, 200);
         return _this;
     }
     Magnifier.defaultProps = {
@@ -238,6 +233,6 @@ var Magnifier = (function (_super) {
         mgTouchOffsetY: -50,
     };
     return Magnifier;
-}(React.PureComponent));
+}(PureComponent));
 
-module.exports = Magnifier;
+export default Magnifier;

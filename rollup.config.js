@@ -12,9 +12,9 @@ export default {
 		},
 		{
 			file: pkg.module,
-			format: "es",
+			format: "esm",
 		},
 	],
-	external: ["react", "lodash.debounce", "lodash.throttle"],
+	external: ["react", "lodash"],
 	plugins: [postcss(), typescript()],
 };

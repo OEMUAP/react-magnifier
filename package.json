@@ -1,6 +1,7 @@
 {
-	"name": "react-magnifier",
-	"version": "3.0.5",
+	"name": "@oemuap/react-magnifier",
+	"version": "3.0.6",
+  "type": "module",
 	"description": "React image zoom component",
 	"keywords": [
 		"react",
@@ -23,7 +24,7 @@
 		"./dist/"
 	],
 	"main": "./dist/Magnifier.js",
-	"module": "./dist/Magnifier.es.js",
+	"module": "./dist/Magnifier.esm.js",
 	"types": "./dist/Magnifier.d.ts",
 	"scripts": {
 		"start": "npm-run-all build:rollup --parallel start:*",
@@ -41,11 +42,9 @@
 		"release": "np"
 	},
 	"dependencies": {
-		"@types/lodash.debounce": "^4.0.6",
-		"@types/lodash.throttle": "^4.1.6",
+		"@types/lodash": "^4.14.165",
 		"@types/react": "^16.9.23",
-		"lodash.debounce": "^4.0.8",
-		"lodash.throttle": "^4.1.1"
+		"lodash": "^4.17.21"
 	},
 	"peerDependencies": {
 		"react": "^18.2.0"
